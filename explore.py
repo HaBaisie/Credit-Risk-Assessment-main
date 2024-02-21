@@ -4,6 +4,8 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.express as px
+import sklearn
+from sklearn.model_selection import train_test_split
 
 def explore_data():
     df = pd.read_csv("german_credit_data.csv", index_col=0)
