@@ -1,8 +1,7 @@
 import streamlit as st
 import pickle
 import numpy as np
-import sklearn
-from sklearn.model_selection import train_test_split
+
 
 def load_model():
     with open('credit_predict3.sav', 'rb') as file:
