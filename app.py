@@ -6,8 +6,6 @@ Created on Wed Feb  7 02:45:35 2024
 """
 
 import streamlit as st
-import sklearn
-from sklearn.model_selection import train_test_split
 from predict_page import show_predict_page
 from explore import explore_data
 
