@@ -4,13 +4,13 @@ import numpy as np
 
 
 def load_model():
-    with open('credit_predict4.sav', 'rb') as file:
+    with open('credit_predict3.sav', 'rb') as file:
         data = pickle.load(file)
     return data
 
 data = load_model()
 
-svm_loaded=data["model"]
+gradient_boost=data["model"]
 S_encoder= data["S_encoder"]
 J_encoder=data["J_encoder"]
 H_encoder=data["H_encoder"]
@@ -51,7 +51,7 @@ def show_predict_page():
         X[:, 4] = CA_encoder.transform(X[:, 4])  # Reshape for compatibility
         X[:, 5] = P_encoder.transform(X[:, 5])  # Reshape for compatibility 
         X=X.astype(float)
-        predi = int(svm_loaded.predict(X))
+        predi = int(gradient_boost.predict(X))
         if predi == 1:
             st.write("The customer is eligible for a loan.")
         elif predi == 0:
